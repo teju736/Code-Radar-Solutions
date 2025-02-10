@@ -5,6 +5,6 @@ int main(){
         printf("Divisible");
     }
     else{
-        ("Not Divisible")
+        ("Not Divisible");
     }
 }
