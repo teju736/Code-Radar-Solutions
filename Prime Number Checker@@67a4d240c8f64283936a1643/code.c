@@ -6,19 +6,10 @@ for(int i=1; i<=a; i++){
         c++;
     }
 }
-return c;}
-
-int main() {
-    printf("Enter the number:");
-    int a;
-    scanf("%d" ,&a);
-    int su = isprime(a);
-    if(su==2){
-         printf("Prime");
-    }
-    else{
-         printf("Not Prime");
-    }
-
- return 0;
+if (c==2){
+    return 1;
+}
+else{
+    return 0;
+}
 }
