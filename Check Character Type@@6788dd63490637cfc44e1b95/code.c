@@ -3,7 +3,6 @@
 
 int main() {
     char i;
-    printf("Enter a character: ");
     scanf("%c",i);
     if (isdigit(i)) {
         printf("Digit\n");
