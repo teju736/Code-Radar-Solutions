@@ -1,11 +1,9 @@
 int main(){
 int a[10];
 int n=5;
-printf("enter the elements");
 for(int i=0;i<n;i++){
     scanf("%d",&a[i]);
 }
- printf("You entered: ");
     for (int i = 0; i < n; i++) {
         printf("%d ", a[i]);
     }
@@ -20,7 +18,6 @@ for(j=0;j<n-1;j++){
         }
     }
 }
- printf("Sorted array: ");
     for (int i = 0; i < n; i++) {
         printf("%d ", a[i]);
     }
