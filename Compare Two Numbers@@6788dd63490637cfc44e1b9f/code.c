@@ -5,8 +5,8 @@ int main(){
     if(a==b){
         printf("Equal");
     }else if(a>b){
-        printf("%d",a);
+        printf("First");
     }else{
-        printf("%d",b)
+        printf("Second");
     }
 }
