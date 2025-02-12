@@ -15,3 +15,4 @@ int main(){
         printf("Not Prime\n");
     }
     }
+}
