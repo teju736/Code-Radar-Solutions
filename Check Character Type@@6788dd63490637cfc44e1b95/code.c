@@ -1,12 +1,16 @@
 #include <stdio.h>
 #include <ctype.h>
-int main(){
+
+int main() {
     char i;
-    scanf("%c",&i);
-    if(isdigit(i)){
-        printf("Digit");
+    printf("Enter a character: ");
+    scanf("%c",i)
+    if (isdigit(i)) {
+        printf("Digit\n");
     }
-     i = tolower(i);
+    else if (isalpha(i)) {
+        i = tolower(i); 
+
         if (i == 'a' || i == 'e' || i == 'i' || i == 'o' || i == 'u') {
             printf("Vowel\n");
         } else {
@@ -16,6 +20,11 @@ int main(){
     else {
         printf("Special Character\n");
     }
+
+    return 0;
+}
+
+
 
     
 
