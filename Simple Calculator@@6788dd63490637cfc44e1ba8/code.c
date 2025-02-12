@@ -4,13 +4,13 @@ int main(){
     scanf("%d %d",&a,&b);
     char o;
     scanf("%c",&o);
-    if(c=='+'){
+    if(o=='+'){
         printf("%d",a+b);
-    }else if(c=='-'){
+    }else if(o=='-'){
         printf("%d",a-b);
-    }else if(c=='/'){
+    }else if(o=='/'){
         printf("%d",a/b);
-    }else if(c=='*'){
+    }else if(o=='*'){
         printf("%d",a*b);
     }
 }
