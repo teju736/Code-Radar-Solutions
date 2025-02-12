@@ -5,10 +5,7 @@ int main() {
     char o;
 
     // Read input correctly
-    scanf("%d %d", &a, &b);
-    scanf(" %c", &o);  // Space before %c to consume newline
-
-    // Perform operations based on the operator
+    scanf("%d %d %c", &a, &b,&o);
     if (o == '+') {
         printf("%d\n", a + b);
     } else if (o == '-') {
