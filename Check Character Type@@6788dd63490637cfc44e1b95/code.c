@@ -6,8 +6,8 @@ int main(){
     if(isdigit(i)){
         printf("Digit");
     }
-     ch = tolower(ch);
-        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+     ch = tolower(i);
+        if (i == 'a' || i == 'e' || i == 'i' || i == 'o' || i == 'u') {
             printf("Vowel\n");
         } else {
             printf("Consonant\n");
