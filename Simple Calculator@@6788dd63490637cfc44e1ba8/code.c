@@ -13,6 +13,6 @@ int main(){
     }else if(o=='*'){
         printf("%d",a*b);
     }else{
-        printf("error")
+        printf("error");
     }
 }
