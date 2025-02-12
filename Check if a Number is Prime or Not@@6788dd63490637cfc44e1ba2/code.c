@@ -7,7 +7,7 @@ int main(){
     }
      for (int i = 2; i * i <= a; i++) {
         if (a % i == 0) {
-            isPrime = 0; // Found a factor, set flag to 0
+            isPrime = 0; 
             break;}
             if (isPrime) {
         printf("Prime\n");
@@ -15,4 +15,5 @@ int main(){
         printf("Not Prime\n");
     }
     }
+    return  0;
 }
