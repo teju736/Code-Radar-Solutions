@@ -6,7 +6,6 @@ int main(){
         for(int space=0;space<=N-i;space++){
             printf(" ");
         }
-        int sum=0
         for(int j=1;j<=i+2;j++){
             printf("*");
         }
