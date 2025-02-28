@@ -11,8 +11,12 @@ int main(){
                     printf("*");
                 }printf("\n");
             }else{
-                for(int j=1;j<=N-2){
-                    printf("*");
+                for(int j=1;j<=N;j++){
+                    if (j==1||j==N){
+                        printf("*");
+                    }else{
+                        printf(" ");
+                    }
                 }
             }
         }
