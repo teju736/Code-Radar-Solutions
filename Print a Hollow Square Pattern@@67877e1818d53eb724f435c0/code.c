@@ -12,12 +12,14 @@ int main(){
                 }printf("\n");
             }else{
                 for(int j=1;j<=N;j++){
-                    if (j==1||j==N){
+                    if (j==1){
                         printf("*");
-                    }else{
+                    }else if(j==N){
+                        printf("*\n");
+                    }
+                    else{
                         printf(" ");
                     }
-                    printf("\n");
                 }
             }
         }
