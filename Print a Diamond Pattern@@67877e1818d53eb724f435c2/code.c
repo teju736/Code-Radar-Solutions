@@ -5,6 +5,7 @@ int main(){
     for(int i=1;i<=(N*2)-1;i++){
         if(i<=N){for(int j=1;j<=(i*2)-1;j++){
             printf("*");
+        }
         }else{
             for(int j=(i*2)-1;j>=1;j--){
                 printf("*");
