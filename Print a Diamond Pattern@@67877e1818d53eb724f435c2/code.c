@@ -11,9 +11,6 @@ int main(){
                 printf("*");
             }
         }else{
-            for(int space=1;space<=N-1;space++){
-                printf(" ");
-            }
             for(int j=N;j>=1;j--){
                 printf("*");
             }
