@@ -14,7 +14,7 @@ int main(){
             for(int space=1;space<=N-i;space++){
                 printf(" ");
             }
-            for(int j=N;j<=(i*2)-1;j++){
+            for(int j=1;j<=(i*2)-1;j++){
                 printf("*");
             }
         }printf("\n");
