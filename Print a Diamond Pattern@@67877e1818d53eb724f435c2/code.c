@@ -10,6 +10,12 @@ int main(){
         for(int j=1;j<=(i*2)-1;j++){
             printf("*");
         }
+    }else{
+        for(int space=N-1;space>=1;space--){
+            printf(" ");
+        }for(int j=N;j>=0;j--){
+            printf("*");
+        }
     }printf("\n");
    }
 }
