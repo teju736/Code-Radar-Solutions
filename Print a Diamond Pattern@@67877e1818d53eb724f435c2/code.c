@@ -3,7 +3,7 @@ int main(){
     int N;
     scanf("%d",&N);
    for(int i=1;i<=(N*2)-1;i++){
-    if(N==3){
+    if(i<=N){
         for(int space=N-1;space>0;space--){
             printf(" ");
         }
