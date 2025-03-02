@@ -11,6 +11,6 @@ int main(){
             for(int j=N;j>=1;j--){
                 printf("*");
             }
-        }
+        }printf("\n");
     }
 }
