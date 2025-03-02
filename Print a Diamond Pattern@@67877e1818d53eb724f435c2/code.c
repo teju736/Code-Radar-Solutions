@@ -13,7 +13,7 @@ int main(){
     }else{
         for(int space=N-2;space>=1;space--){
             printf(" ");
-        }for(int j=N-1;j>=i;j--){
+        }for(int j=i-1;j>=0;j--){
             printf("*");
         }
     }printf("\n");
