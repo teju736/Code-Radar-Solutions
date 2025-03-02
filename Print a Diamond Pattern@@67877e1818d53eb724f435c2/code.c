@@ -12,7 +12,7 @@ int main(){
             }
         }else{
             for(int space=1;space<=i;space++){
-                printf(" ")
+                printf(" ");
             }
             for(int j=N;j>=1;j--){
                 printf("*");
