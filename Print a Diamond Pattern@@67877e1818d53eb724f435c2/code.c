@@ -11,7 +11,7 @@ int main(){
             printf("*");
         }
     }else{
-        for(int space=N-2;space>=1;space--){
+        for(int space=1;space>=i-N;space++){
             printf(" ");
         }for(int j=1;j<=((N * 2 - i) * 2) - 1;j++){
             printf("*");
