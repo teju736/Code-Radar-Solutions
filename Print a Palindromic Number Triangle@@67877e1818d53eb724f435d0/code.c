@@ -14,6 +14,6 @@ int main(){
             }else{
                 printf("%d",sum-1);
             }
-        }
-    }printf("\n");
+        }printf("\n");
+    }
 }
