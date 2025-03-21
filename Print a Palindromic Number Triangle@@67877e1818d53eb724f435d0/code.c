@@ -9,8 +9,8 @@ int main(){
         }
         for(int j=1;j<=i*2+1;j++){
             if(j<=i){
-                sum=i+1
-                printf("%d",i+1);
+                sum=i+1;
+                printf("%d",sum);
             }else{
                 printf("%d",sum-1);
             }
