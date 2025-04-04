@@ -2,21 +2,13 @@
 #include <string.h>
 #include <ctype.h>
 
-int main() {
-    char str[100];
-    int shift;
-
-    fgets(str, sizeof(str), stdin); // Read the input string
-
-    // Remove trailing newline if present
+void caesar_cipher(char str[], int shift) {
     int n = strlen(str);
+
     if (str[n - 1] == '\n') {
         str[n - 1] = '\0';
         n--;
     }
-
-    // Read the shift value (consume newline left by fgets with a space before %d)
-    scanf(" %d", &shift);
 
     for (int i = 0; i < n; i++) {
         char ch = str[i];
@@ -30,6 +22,18 @@ int main() {
     }
 
     printf("\n");
+}
+
+int main() {
+    char str[100];
+    int shift;
+
+    fgets(str, sizeof(str), stdin);
+    scanf("%d", &shift);
+
+    caesar_cipher(str, shift);
+
     return 0;
 }
+
 
