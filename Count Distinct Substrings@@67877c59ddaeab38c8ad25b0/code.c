@@ -33,3 +33,17 @@ int main() {
                 if (isSame(substr[k], temp)) {
                     found = true;
                     break;
+                }
+            }
+
+            // If not found, add to list
+            if (!found) {
+                strcpy(substr[count], temp);
+                count++;
+            }
+        }
+    }
+
+    printf("%d\n", count);
+    return 0;
+}
