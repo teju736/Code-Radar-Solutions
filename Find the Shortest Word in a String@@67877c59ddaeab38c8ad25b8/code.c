@@ -1,33 +1,36 @@
-// Your code here...
 #include <stdio.h>
 #include <string.h>
-int main(){
+
+int main() {
     char line[100];
     char temp[100];
-    char ans[100];
-    ans[0]=' ';
-    ans[1]='\0';
-    fgets(line,sizeof(line),stdin);
-    int min=strlen(line);
-    int count=0;
-    for(int i=0;i<strlen(line);i++){
-          printf("temp: %s ;ans: %s ;line[i]: %c\ncount=%d ;min=%d",temp,ans,line[i],count,min);
-        if(line[i]==' ' && count !=0){
-            
-            if(min>count){
-                min=count;
-                temp[count]='\0';
-                for(int j=0;j<strlen(temp);j++){
-                    ans[j]=temp[j];
+    char ans[100] = ""; // store shortest word
+    int min = 100;      // initialize to max possible
+    int count = 0;
+
+    fgets(line, sizeof(line), stdin);
+
+    int len = strlen(line);
+    if (line[len - 1] == '\n') {
+        line[len - 1] = '\0';
+        len--;
+    }
+
+    for (int i = 0; i <= len; i++) {
+        if (line[i] == ' ' || line[i] == '\0') {
+            if (count > 0) {
+                temp[count] = '\0'; // null-terminate word
+                if (count < min) {
+                    min = count;
+                    strcpy(ans, temp);
                 }
+                count = 0; // reset for next word
             }
-            count=0;
-        }
-        else{
-            temp[count]=line[i];
-            ++count;
+        } else {
+            temp[count++] = line[i];
         }
     }
-    printf("%s",ans);
+
+    printf("%s\n", ans);
     return 0;
 }
