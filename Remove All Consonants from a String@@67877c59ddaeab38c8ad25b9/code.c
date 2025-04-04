@@ -1,17 +1,30 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(){
+int main() {
     char str[100];
-    scanf("%s" , &str);
-    int n = strlen(str);
-
     char str1[100];
-    for(int i = 0 ; i<n ; i++){
+    int j = 0;
+
+    fgets(str, sizeof(str), stdin); // Read entire line including spaces
+
+    int n = strlen(str);
+    if (str[n - 1] == '\n') {
+        str[n - 1] = '\0';
+        n--;
+    }
+
+    for (int i = 0; i < n; i++) {
         char ch = str[i];
-        if(ch == 'a' || ch == 'e' ||ch == 'i' ||ch == 'o' ||ch == 'u'|| ch== ' '){
-            str1[i]+= ch ;
+        if (ch == 'a' || ch == 'e' || ch == 'i' ||
+            ch == 'o' || ch == 'u' || ch == ' ') {
+            str1[j++] = ch;
         }
     }
-    printf("%s" , str1);
+
+    str1[j] = '\0'; // null-terminate the string
+
+    printf("%s\n", str1);
+
+    return 0;
 }
