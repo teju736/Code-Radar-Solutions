@@ -1,22 +1,21 @@
 #include <stdio.h>
-#include <string.h>
-#include <ctype.h>
 
 int main() {
     char ch;
-    char str1[1000];  // larger buffer for combined output
-    int q = 0;
+    char str[1000]; // large enough buffer
+    int i = 0;
 
-    // Read characters one by one until EOF
+    // Read character by character
     while ((ch = getchar()) != EOF) {
-        if (!isspace(ch)) { // remove all whitespace (space, tab, newline)
-            str1[q++] = ch;
+        if (ch != '\n') { // skip newline, keep everything else
+            str[i++] = ch;
         }
     }
-    str1[q] = '\0'; // terminate the final string
+    str[i] = '\0'; // terminate the final string
 
-    printf("%s", str1);
+    printf("%s", str);
 
     return 0;
 }
+
 
