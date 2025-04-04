@@ -2,6 +2,22 @@
 #include <string.h>
 #include <ctype.h>
 
+// Function declaration (important!)
+void caesar_cipher(char str[], int shift);
+
+int main() {
+    char str[100];
+    int shift;
+
+    fgets(str, sizeof(str), stdin);
+    scanf("%d", &shift);
+
+    caesar_cipher(str, shift);
+
+    return 0;
+}
+
+// Function definition
 void caesar_cipher(char str[], int shift) {
     int n = strlen(str);
 
@@ -23,17 +39,3 @@ void caesar_cipher(char str[], int shift) {
 
     printf("\n");
 }
-
-int main() {
-    char str[100];
-    int shift;
-
-    fgets(str, sizeof(str), stdin);
-    scanf("%d", &shift);
-
-    caesar_cipher(str, shift);
-
-    return 0;
-}
-
-
