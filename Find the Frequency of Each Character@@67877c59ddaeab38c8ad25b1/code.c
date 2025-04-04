@@ -3,30 +3,32 @@
 
 int main() {
     char str[100];
-    int freq[256] = {0}; // ASCII size
+    int freq[256] = {0};  // Frequency map
+    int printed[256] = {0}; // To track already printed characters
 
-    // Read input
     fgets(str, sizeof(str), stdin);
 
-    // Remove newline character if exists
-    int len = strlen(str);
-    if (str[len - 1] == '\n') {
-        str[len - 1] = '\0';
-        len--;
+    // Remove newline if present
+    int n = strlen(str);
+    if (str[n - 1] == '\n') {
+        str[n - 1] = '\0';
+        n--;
     }
 
     // Count frequencies
-    for (int i = 0; i < len; i++) {
-        unsigned char ch = str[i];
-        freq[ch]++;
+    for (int i = 0; i < n; i++) {
+        freq[(unsigned char)str[i]]++;
     }
 
-    // Print frequencies
-    for (int i = 0; i < 256; i++) {
-        if (freq[i] > 0) {
-            printf("'%c' = %d\n", i, freq[i]);
+    // Print in order of first appearance
+    for (int i = 0; i < n; i++) {
+        unsigned char ch = str[i];
+        if (!printed[ch]) {
+            printf("%c: %d\n", ch, freq[ch]);
+            printed[ch] = 1;
         }
     }
 
     return 0;
 }
+
