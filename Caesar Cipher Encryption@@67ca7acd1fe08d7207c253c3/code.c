@@ -2,24 +2,21 @@
 #include <string.h>
 #include <ctype.h>
 
-void caesar_cipher() {
+int main() {
     char str[100];
     int shift;
 
-    printf("Enter the string: ");
-    fgets(str, sizeof(str), stdin);
+    fgets(str, sizeof(str), stdin); // Read input string
 
-    printf("Enter shift value: ");
-    scanf("%d", &shift);
-
-    // Normalize shift between 0-25
-    shift = shift % 26;
+    scanf("%d", &shift); // Read shift value
 
     int n = strlen(str);
-    if (str[n - 1] == '\n') str[n - 1] = '\0';
+    if (str[n - 1] == '\n') {
+        str[n - 1] = '\0';
+        n--;
+    }
 
-    printf("Encrypted: ");
-    for (int i = 0; i < strlen(str); i++) {
+    for (int i = 0; i < n; i++) {
         char ch = str[i];
 
         if (isalpha(ch)) {
@@ -31,12 +28,5 @@ void caesar_cipher() {
     }
 
     printf("\n");
-}
-
-int main() {
-    // Call the Caesar Cipher
-    caesar_cipher();
-
     return 0;
 }
-
