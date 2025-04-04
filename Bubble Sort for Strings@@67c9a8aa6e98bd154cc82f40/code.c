@@ -1,3 +1,6 @@
+#include <string.h>
+#include <stdio.h>
+
 void bubbleSort(char arr[][100], int n) {
     char temp[100];
 
@@ -11,4 +14,3 @@ void bubbleSort(char arr[][100], int n) {
         }
     }
 }
-
