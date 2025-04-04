@@ -7,22 +7,23 @@ int main() {
     char w;
 
     scanf("%s", str);
-    getchar(); // to consume the leftover newline
+    getchar(); // consume leftover newline
     scanf("%c", &w);
 
     int n = strlen(str);
 
     for (int i = 0; i < n; i++) {
         char ch = str[i];
-        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+        if (ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
             str1[i] = w;
         } else {
             str1[i] = ch;
         }
     }
 
-    str1[n] = '\0'; // null-terminate the new string
+    str1[n] = '\0'; // null-terminate
     printf("%s\n", str1);
 
     return 0;
 }
+
