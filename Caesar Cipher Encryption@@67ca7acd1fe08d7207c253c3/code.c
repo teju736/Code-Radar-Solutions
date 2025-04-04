@@ -2,7 +2,7 @@
 #include <string.h>
 #include <ctype.h>
 
-int main() {
+void caesar_cipher() {
     char str[100];
     int shift;
 
@@ -31,5 +31,12 @@ int main() {
     }
 
     printf("\n");
+}
+
+int main() {
+    // Call the Caesar Cipher
+    caesar_cipher();
+
     return 0;
 }
+
