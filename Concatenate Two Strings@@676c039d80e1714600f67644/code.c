@@ -1,29 +1,22 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int main() {
+    char ch;
+    char str1[1000];  // larger buffer for combined output
     int q = 0;
-    char str[100];
-    char str1[100];
 
-    fgets(str, sizeof(str), stdin);
-    int n = strlen(str);
-    
-    // Remove newline if present
-    if (str[n - 1] == '\n') {
-        str[n - 1] = '\0';
-        n--;
-    }
-
-    // Remove spaces
-    for (int i = 0; i < n; i++) {
-        if (str[i] != ' ') {
-            str1[q++] = str[i];
+    // Read characters one by one until EOF
+    while ((ch = getchar()) != EOF) {
+        if (!isspace(ch)) { // remove all whitespace (space, tab, newline)
+            str1[q++] = ch;
         }
     }
-    str1[q] = '\0'; // Terminate the new string
+    str1[q] = '\0'; // terminate the final string
 
     printf("%s", str1);
 
     return 0;
 }
+
