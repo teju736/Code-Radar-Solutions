@@ -3,7 +3,10 @@
 
 int main() {
     char str[100];
-    fgets(str, sizeof(str), stdin); // Read the full input including spaces
+    char str1[100];
+    int j = 0;
+
+    fgets(str, sizeof(str), stdin); // Read entire line
 
     int n = strlen(str);
     if (str[n - 1] == '\n') {
@@ -13,12 +16,16 @@ int main() {
 
     for (int i = 0; i < n; i++) {
         char ch = str[i];
-        printf("%c", ch);
+        // Keep lowercase vowels and spaces
         if (ch == 'a' || ch == 'e' || ch == 'i' ||
-            ch == 'o' || ch == 'u') {
-            break; // Stop after printing the first vowel
+            ch == 'o' || ch == 'u' || ch == ' ') {
+            str1[j++] = ch;
         }
     }
 
+    str1[j] = '\0'; // null-terminate
+    printf("%s\n", str1);
+
     return 0;
 }
+
