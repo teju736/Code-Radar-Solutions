@@ -6,15 +6,17 @@ int main() {
     char str[100];
     int shift;
 
-    fgets(str, sizeof(str), stdin); // Read input string
+    fgets(str, sizeof(str), stdin); // Read the input string
 
-    scanf("%d", &shift); // Read shift value
-
+    // Remove trailing newline if present
     int n = strlen(str);
     if (str[n - 1] == '\n') {
         str[n - 1] = '\0';
         n--;
     }
+
+    // Read the shift value (consume newline left by fgets with a space before %d)
+    scanf(" %d", &shift);
 
     for (int i = 0; i < n; i++) {
         char ch = str[i];
@@ -30,3 +32,4 @@ int main() {
     printf("\n");
     return 0;
 }
+
