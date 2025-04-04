@@ -2,11 +2,13 @@
 #include <string.h>
 #include <ctype.h>
 
+int is_vowel(char ch) {
+    ch = tolower(ch);
+    return (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u');
+}
+
 int main() {
     char str[100];
-    char str1[100];
-    int j = 0;
-
     fgets(str, sizeof(str), stdin);
 
     int n = strlen(str);
@@ -15,15 +17,34 @@ int main() {
         n--;
     }
 
+    // Check if input contains a space (treat it as a sentence)
+    int is_sentence = 0;
     for (int i = 0; i < n; i++) {
-        char ch = tolower(str[i]); // make it case-insensitive
-        if (ch == 'a' || ch == 'e' || ch == 'i' ||
-            ch == 'o' || ch == 'u' || ch == ' ') {
-            str1[j++] = str[i]; // keep original character (for case)
+        if (str[i] == ' ') {
+            is_sentence = 1;
+            break;
         }
     }
 
-    str1[j] = '\0';
-    printf("%s\n", str1);
+    if (is_sentence) {
+        // Extract only vowels and spaces
+        for (int i = 0; i < n; i++) {
+            char ch = str[i];
+            if (is_vowel(ch) || ch == ' ') {
+                printf("%c", ch);
+            }
+        }
+    } else {
+        // Print until and including the first vowel
+        for (int i = 0; i < n; i++) {
+            char ch = str[i];
+            printf("%c", ch);
+            if (is_vowel(ch)) {
+                break;
+            }
+        }
+    }
+
+    printf("\n");
     return 0;
 }
