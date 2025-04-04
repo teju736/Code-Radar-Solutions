@@ -1,23 +1,23 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int main() {
     char s[100];
-    char s2[100] = ""; // initialize to empty string
-
+    char s2[100] = "";
     fgets(s, sizeof(s), stdin);
 
-    // Remove spaces and store in s2
+    // Remove spaces and convert to lowercase
     for (int i = 0; i < strlen(s); i++) {
         if (s[i] != ' ' && s[i] != '\n') {
-            char temp[2];
-            temp[0] = s[i];
-            temp[1] = '\0';
-            strcat(s2, temp);
+            char ch = tolower(s[i]);
+            int len = strlen(s2);
+            s2[len] = ch;
+            s2[len + 1] = '\0';
         }
     }
 
-    // Check for palindrome
+    // Palindrome check
     int len = strlen(s2);
     for (int i = 0; i < len / 2; i++) {
         if (s2[i] != s2[len - i - 1]) {
@@ -29,3 +29,4 @@ int main() {
     printf("Yes\n");
     return 0;
 }
+
