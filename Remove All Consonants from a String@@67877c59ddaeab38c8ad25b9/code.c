@@ -3,28 +3,18 @@
 
 int main() {
     char str[100];
-    char str1[100];
-    int j = 0;
+    fgets(str, sizeof(str), stdin);
 
-    fgets(str, sizeof(str), stdin); // Read entire line including spaces
-
-    int n = strlen(str);
-    if (str[n - 1] == '\n') {
-        str[n - 1] = '\0';
-        n--;
-    }
-
-    for (int i = 0; i < n; i++) {
+    int i = 0;
+    while (str[i] != '\0' && str[i] != '\n') {
         char ch = str[i];
-        if (ch == 'a' || ch == 'e' || ch == 'i' ||
-            ch == 'o' || ch == 'u' || ch == ' ') {
-            str1[j++] = ch;
+        printf("%c", ch);
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+            break; // stop after printing the first vowel
         }
+        i++;
     }
-
-    str1[j] = '\0'; // null-terminate the string
-
-    printf("%s\n", str1);
 
     return 0;
 }
+
