@@ -4,7 +4,8 @@
 
 int is_vowel(char ch) {
     ch = tolower(ch);
-    return (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u');
+    return (ch == 'a' || ch == 'e' || ch == 'i' ||
+            ch == 'o' || ch == 'u');
 }
 
 int main() {
@@ -26,21 +27,15 @@ int main() {
     }
 
     if (has_space) {
-        // Print vowels and spaces
+        // Case: sentence → print vowels + spaces
         for (int i = 0; i < n; i++) {
             if (is_vowel(str[i]) || str[i] == ' ') {
                 printf("%c", str[i]);
             }
         }
     } else {
-        int digit_or_consonant = 0;
-        // Check if string starts with digit or consonant (non-vowel)
-        if (!is_vowel(str[0])) {
-            digit_or_consonant = 1;
-        }
-
-        if (digit_or_consonant) {
-            // Print until first vowel (include vowel)
+        if (isdigit(str[0])) {
+            // Starts with digit → print up to and including first vowel
             for (int i = 0; i < n; i++) {
                 printf("%c", str[i]);
                 if (is_vowel(str[i])) {
@@ -48,7 +43,7 @@ int main() {
                 }
             }
         } else {
-            // Only vowels
+            // Normal word → print only vowels
             for (int i = 0; i < n; i++) {
                 if (is_vowel(str[i])) {
                     printf("%c", str[i]);
@@ -60,5 +55,6 @@ int main() {
     printf("\n");
     return 0;
 }
+
 
 
