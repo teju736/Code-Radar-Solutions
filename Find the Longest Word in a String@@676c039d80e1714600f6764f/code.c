@@ -4,29 +4,32 @@
 int main() {
     char str1[100];
     fgets(str1, sizeof(str1), stdin);
-    int n = strlen(str1);
-    char str2[100];
-    int c = 0;
-    int max = 0;
-    int y = 0;
-    int start =0;
-    for (int i = 0; i<=n; i++) {
+
+    // Remove newline if present
+    int len = strlen(str1);
+    if (str1[len - 1] == '\n') {
+        str1[len - 1] = '\0';
+        len--;
+    }
+
+    char longest[100];
+    int maxLen = 0, currLen = 0;
+    int start = 0;
+
+    for (int i = 0; i <= len; i++) {
         if (str1[i] == ' ' || str1[i] == '\0') {
-          if(c>max){
-           for(int j = start; j<=i-1 ; j++){
-              str2[y]= str1[j];
-              y++;
-           }}
-           max=c;
-           c = 0;
-           start = i+1;
-           y  = 0;
-           
-        }
-        else{
-            c++;
+            if (currLen > maxLen) {
+                maxLen = currLen;
+                strncpy(longest, &str1[start], currLen);
+                longest[currLen] = '\0'; // null-terminate
+            }
+            currLen = 0;
+            start = i + 1;
+        } else {
+            currLen++;
         }
     }
-    printf("%s" , str2);
+
+    printf("%s", longest);
     return 0;
 }
