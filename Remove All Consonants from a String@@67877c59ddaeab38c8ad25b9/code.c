@@ -17,30 +17,42 @@ int main() {
         n--;
     }
 
-    // Check if input contains a space (treat it as a sentence)
-    int is_sentence = 0;
+    int has_space = 0;
     for (int i = 0; i < n; i++) {
         if (str[i] == ' ') {
-            is_sentence = 1;
+            has_space = 1;
             break;
         }
     }
 
-    if (is_sentence) {
-        // Extract only vowels and spaces
+    if (has_space) {
+        // Print vowels and spaces
         for (int i = 0; i < n; i++) {
-            char ch = str[i];
-            if (is_vowel(ch) || ch == ' ') {
-                printf("%c", ch);
+            if (is_vowel(str[i]) || str[i] == ' ') {
+                printf("%c", str[i]);
             }
         }
     } else {
-        // Print until and including the first vowel
-        for (int i = 0; i < n; i++) {
-            char ch = str[i];
-            printf("%c", ch);
-            if (is_vowel(ch)) {
-                break;
+        int digit_or_consonant = 0;
+        // Check if string starts with digit or consonant (non-vowel)
+        if (!is_vowel(str[0])) {
+            digit_or_consonant = 1;
+        }
+
+        if (digit_or_consonant) {
+            // Print until first vowel (include vowel)
+            for (int i = 0; i < n; i++) {
+                printf("%c", str[i]);
+                if (is_vowel(str[i])) {
+                    break;
+                }
+            }
+        } else {
+            // Only vowels
+            for (int i = 0; i < n; i++) {
+                if (is_vowel(str[i])) {
+                    printf("%c", str[i]);
+                }
             }
         }
     }
@@ -48,3 +60,4 @@ int main() {
     printf("\n");
     return 0;
 }
+
