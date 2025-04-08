@@ -2,40 +2,27 @@
 #include <string.h>
 #include <ctype.h>
 
-// Function declaration (important!)
-void caesar_cipher(char str[], int shift);
+#include <string.h>
+#include <stdio.h>
 
-int main() {
-    char str[100];
-    int shift;
+void caesarCipherEncrypt(char arr[][100], int n, int shift) {
+    for (int i = 0; i < n; i++) {
+        int len = strlen(arr[i]);
 
-    fgets(str, sizeof(str), stdin);
-    scanf("%d", &shift);
-
-    caesar_cipher(str, shift);
-
-    return 0;
+        for (int j = 0; j < len; j++) {
+            if (arr[i][j] >= 'a' && arr[i][j] <= 'z') {
+                arr[i][j] = ((arr[i][j] - 'a' + shift) % 26) + 'a';
+            }
+            else if (arr[i][j] >= 'A' && arr[i][j] <= 'Z') {
+                arr[i][j] = ((arr[i][j] - 'A' + shift) % 26) + 'A';
+            }
+            // Optionally handle other characters if needed
+        }
+    }
 }
 
-// Function definition
-void caesar_cipher(char str[], int shift) {
-    int n = strlen(str);
-
-    if (str[n - 1] == '\n') {
-        str[n - 1] = '\0';
-        n--;
-    }
-
+void printArray(char arr[][100], int n) {
     for (int i = 0; i < n; i++) {
-        char ch = str[i];
-
-        if (isalpha(ch)) {
-            char base = isupper(ch) ? 'A' : 'a';
-            ch = (ch - base + shift) % 26 + base;
-        }
-
-        printf("%c", ch);
+        printf("%s\n", arr[i]);
     }
-
-    printf("\n");
 }
