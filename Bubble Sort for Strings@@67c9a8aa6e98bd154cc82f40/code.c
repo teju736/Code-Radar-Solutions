@@ -7,7 +7,7 @@ void bubblesort(char arr[][100], int n) {
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
             if (strcmp(arr[j], arr[j + 1]) > 0) {
-                // Swap strings if they are in the wrong order
+                // Swap strings
                 strcpy(temp, arr[j]);
                 strcpy(arr[j], arr[j + 1]);
                 strcpy(arr[j + 1], temp);
@@ -25,6 +25,7 @@ void printArray(char arr[][100], int n) {
 
 // Main function where program execution starts
 int main() {
+
     int n; // Variable to store the number of strings
 
     // Read the number of strings from user input
@@ -37,7 +38,7 @@ int main() {
         scanf("%s", arr[i]);
     }
 
-    // Call the bubble sort function
+    // Call the bubblesort function (to be implemented by you!)
     bubblesort(arr, n);
 
     // Display the sorted array of strings
